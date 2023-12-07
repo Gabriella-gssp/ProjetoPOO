@@ -1,9 +1,9 @@
-package com.example.projetopoo.InterfaceGrafica;
+package com.example.projetopoo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class AtoProcessualController {
+public class ProcessoController {
     @FXML
     private Label welcomeText;
 
