@@ -12,14 +12,13 @@ public class ProcessoDAO {
 
     private Connection connection;
 
-    // Construtor que recebe a conexão com o banco de dados
     public ProcessoDAO(Connection connection) {
         this.connection = connection;
     }
 
     // Método para inserir um novo processo no banco de dados
     public void inserirProcesso(Processo processo) throws SQLException {
-        String sql = "INSERT INTO processo (numero_processo, tipo, data_protocolo, numero_tribunal, tribunal, instancia) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO processo (numero, tipo, data_protocolo, numero_tribunal, tribunal, instancia) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, processo.getNumero());
             preparedStatement.setString(2, processo.getTipo());
@@ -47,7 +46,7 @@ public class ProcessoDAO {
 
     // Método para buscar um processo pelo número do processo
     public Processo buscarProcessoPorNumero(String numeroProcesso) throws SQLException {
-        String sql = "SELECT * FROM processo WHERE numero_processo = ?";
+        String sql = "SELECT * FROM processo WHERE numero = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, numeroProcesso);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -88,7 +87,7 @@ public class ProcessoDAO {
 
     // Método para deletar um processo
     public void deletarProcesso(String numeroProcesso) throws SQLException {
-        String sql = "DELETE FROM processo WHERE numero_processo = ?";
+        String sql = "DELETE FROM processo WHERE numero = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, numeroProcesso);
             preparedStatement.executeUpdate();

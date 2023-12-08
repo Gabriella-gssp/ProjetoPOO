@@ -1,5 +1,6 @@
 package com.example.projetopoo.Models;
 
+
 public class AtosProcessuais {
 
     private int id;

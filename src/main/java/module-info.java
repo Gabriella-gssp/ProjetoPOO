@@ -15,4 +15,6 @@ module com.example.projetopoo {
 
     opens com.example.projetopoo to javafx.fxml;
     exports com.example.projetopoo;
+    exports com.example.projetopoo.Controllers;
+    opens com.example.projetopoo.Controllers to javafx.fxml;
 }
