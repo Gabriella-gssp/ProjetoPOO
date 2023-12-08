@@ -14,7 +14,7 @@ public class ProcessoController {
 
     public ProcessoController() {
         this.processoDAO = new ProcessoDAO(connection);
-        // Inicialize aqui qualquer outra dependência necessária
+
     }
 
     public void adicionarProcesso(Processo processo) throws SQLException {

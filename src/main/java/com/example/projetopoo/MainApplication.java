@@ -1,4 +1,4 @@
-package com.example.projetopoo.Controllers;
+package com.example.projetopoo;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Processo.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Processo");
+        stage.setTitle("Processos");
         stage.setScene(scene);
         stage.show();
     }

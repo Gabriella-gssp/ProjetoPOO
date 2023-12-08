@@ -32,7 +32,7 @@ public class ProcessoDAO {
 
     // Método para atualizar um processo existente no banco de dados
     public void atualizarProcesso(Processo processo) throws SQLException {
-        String sql = "UPDATE processo SET tipo = ?, data_protocolo = ?, numero_tribunal = ?, tribunal = ?, instancia = ? WHERE numero_processo = ?";
+        String sql = "UPDATE processo SET tipo = ?, data_protocolo = ?, numero_tribunal = ?, tribunal = ?, instancia = ? WHERE numero = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, processo.getTipo());
             preparedStatement.setDate(2, processo.getDataProtocolo());
